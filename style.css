@@ -1,0 +1,24 @@
+.gameboard {
+  width: 540px;
+  height: 540px;
+  display: flex;
+  border: solid;
+  flex-wrap: wrap;
+  margin: 0 auto;
+}
+
+.square {
+  border: solid 1px;
+  width: 178px;
+  height: 178px;
+}
+
+.gameboard .square {
+  flex-shrink: 0;
+  flex-grow: 1;
+}
+
+div.square {
+  font-size: 170px;
+  text-align: center;
+}
