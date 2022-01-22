@@ -82,8 +82,13 @@ function listenToClick(id) {
     const isThereAWinner = person.winner ? true : person.winner;
 
     if (isThereAWinner || counter === 10) {
-      alert(`Winner winner chicken dinner ${person.winner}`);
-      window.location.reload();
+      const showWinner = document.getElementById("announce-winner");
+      showWinner.innerHTML = `${person.name} is the winner!`;
+      showWinner.style.display = "block";
+
+      document.body.addEventListener("click", () => {
+        window.location.reload();
+      });
     }
   }
 

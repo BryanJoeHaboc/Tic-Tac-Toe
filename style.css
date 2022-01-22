@@ -22,3 +22,23 @@ div.square {
   font-size: 170px;
   text-align: center;
 }
+
+.announce-winner {
+  display: none;
+  position: absolute;
+  left: 0;
+  top: 40%;
+  right: 0;
+  margin-left: auto;
+  margin-right: auto;
+  width: 100%;
+
+  font-size: 60px;
+  text-align: center;
+  background-color: tomato;
+}
+.announce-winner div {
+  /* position: absolute;
+  margin: auto; */
+  text-align: center;
+}
