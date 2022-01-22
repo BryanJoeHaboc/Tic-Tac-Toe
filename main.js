@@ -79,33 +79,15 @@ function listenToClick(id) {
       counter++;
     }
 
-    person.winner ? console.log(`${person.name}`) : person.winner;
+    const isThereAWinner = person.winner ? true : person.winner;
 
-    if (person.winner || counter === 10) {
-      console.log("wat");
-      const square11 = document.getElementById("square-11");
-      const square12 = document.getElementById("square-12");
-      const square13 = document.getElementById("square-13");
-      const square21 = document.getElementById("square-21");
-      const square22 = document.getElementById("square-22");
-      const square23 = document.getElementById("square-23");
-      const square31 = document.getElementById("square-31");
-      const square32 = document.getElementById("square-32");
-      const square33 = document.getElementById("square-33");
-      square11.removeEventListener("click", handleClick);
-      square12.removeEventListener("click", handleClick);
-      square13.removeEventListener("click", handleClick);
-      square21.removeEventListener("click", handleClick);
-      square22.removeEventListener("click", handleClick);
-      square23.removeEventListener("click", handleClick);
-      square31.removeEventListener("click", handleClick);
-      square32.removeEventListener("click", handleClick);
-      square33.removeEventListener("click", handleClick);
+    if (isThereAWinner || counter === 10) {
+      alert(`Winner winner chicken dinner ${person.winner}`);
+      window.location.reload();
     }
   }
 
-  const eventSquare = square.addEventListener("click", handleClick);
-  return eventSquare;
+  return square.addEventListener("click", handleClick, false);
 }
 
 //-------------------------------//
@@ -125,20 +107,14 @@ const gameboardArray = (function () {
 const player1 = Player("player1", "X");
 const player2 = Player("bot", "O");
 
-if (!player1.winner && !player2.winner) {
-  if (counter > -1 || counter < 10) {
-    listenToClick("square-11");
-    listenToClick("square-12");
-    listenToClick("square-13");
-    listenToClick("square-21");
-    listenToClick("square-22");
-    listenToClick("square-23");
-    listenToClick("square-31");
-    listenToClick("square-32");
-    listenToClick("square-33");
-  } else {
-    console.log("counter is 10");
-  }
-} else {
-  alert("bawal na");
-}
+const displayController = (function () {
+  listenToClick("square-11");
+  listenToClick("square-12");
+  listenToClick("square-13");
+  listenToClick("square-21");
+  listenToClick("square-22");
+  listenToClick("square-23");
+  listenToClick("square-31");
+  listenToClick("square-32");
+  listenToClick("square-33");
+})();
